@@ -38,6 +38,16 @@ public class Fibonacci {
         }
     }
 
+    // To find the nth Fibonacci number we can write code based on the mathematic formula for Fibonacci number
+    // F(n) = F(n-1) + F(n-2)
+    // We can achieve this by recursive method
+    public static int getNthFibonacciNumber(int n) {
+        if(n <= 1)
+            return n;
+        else
+            return getNthFibonacciNumber(n-1) + getNthFibonacciNumber(n-2);
+    }
+
     public static void main(String[] args) {
 //        printFibonacciByRange(18);
 //        printFibonacciByTimes(18);
@@ -48,6 +58,11 @@ public class Fibonacci {
         int prev1 = 1;
         System.out.println(prev2);
         System.out.println(prev1);
-        printFibonacciByRecursive(prev2,prev1,2,5);
+        int count = 2;
+        printFibonacciByRecursive(prev2,prev1,count,10);
+
+        int n = 7;
+        int result = getNthFibonacciNumber(n);
+        System.out.println("Nth Fibonacci number for n : "+n+" is : "+result);
     }
 }
